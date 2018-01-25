@@ -5,9 +5,16 @@ import sx.blah.discord.util.DiscordException
 fun main(args: Array<String>) {
     val client = createClient(secret.token, true) ?: throw IllegalStateException("client login failed")
     client.dispatcher.registerListener(EventListener())
-    initCommands()
-    readCommands()
-    saveCommands()
+    initAllCommands()
+    readAllCommands()
+    saveAllCommands()
+    /*  TODO
+    badword filter
+    url filter
+    logging off all bot related actions and messages
+    "nick claiming"
+    link shortener
+     */
 }
 
 fun createClient(token : String, login : Boolean) : IDiscordClient? {
