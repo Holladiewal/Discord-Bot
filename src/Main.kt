@@ -1,13 +1,12 @@
 import sx.blah.discord.api.ClientBuilder
 import sx.blah.discord.api.IDiscordClient
 import sx.blah.discord.util.DiscordException
+import java.io.File
+import java.nio.file.Path
 
 fun main(args: Array<String>) {
     val client = createClient(secret.token, true) ?: throw IllegalStateException("client login failed")
     client.dispatcher.registerListener(EventListener())
-    initAllCommands()
-    readAllCommands()
-    saveAllCommands()
     /*  TODO
     badword filter
     url filter
@@ -18,6 +17,7 @@ fun main(args: Array<String>) {
 }
 
 fun createClient(token : String, login : Boolean) : IDiscordClient? {
+    File("./guilds").mkdir()
     val clientbuilder = ClientBuilder()
     clientbuilder.withToken(token)
     return try {
@@ -30,10 +30,3 @@ fun createClient(token : String, login : Boolean) : IDiscordClient? {
 
 }
 
-fun String.reduce() : String{
-    val tmp1 = this.trim().split(" ").toMutableList()
-    tmp1.removeAll { it.trim() == "" }
-    val sb = StringBuilder()
-    tmp1.forEach{ sb.append(it + " ") }
-    return sb.toString().trim()
-}
