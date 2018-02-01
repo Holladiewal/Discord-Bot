@@ -12,7 +12,7 @@ fun MessageEvent.respond(message: String, tts: Boolean = false){
     this.channel.sendMessage(message, tts)
 }
 
-fun MessageEvent.respond(message: String, embed: EmbedObject, tts: Boolean){
+fun MessageEvent.respond(message: String, embed: EmbedObject, tts: Boolean = false){
     this.channel.sendMessage(message, embed, tts)
 }
 
@@ -32,6 +32,23 @@ val IGuild.commands: CommandHandler
         CommandHandler.instances.put(this.stringID, tmp)
         return tmp
     }
+
+val IGuild.settings: SettingsHandler
+    get() {
+        if (SettingsHandler.instances.containsKey(this.stringID)) return SettingsHandler.instances[this.stringID]!!
+        val tmp = SettingsHandler(this as Guild)
+        SettingsHandler.instances.put(this.stringID, tmp)
+        return tmp
+    }
+
+val IGuild.permissions: PermissionsManager
+    get() {
+        if (PermissionsManager.instances.containsKey(this.stringID)) return PermissionsManager.instances[this.stringID]!!
+        val tmp = PermissionsManager(this as Guild)
+        PermissionsManager.instances.put(this.stringID, tmp)
+        return tmp
+    }
+
 fun IGuild.getCommand(name: String): String = this.commands.getCommand(name)
 fun IGuild.hasCommand(name: String): Boolean = this.commands.hasCommand(name)
 fun IGuild.addCommand(name: String, msg: String){
@@ -43,5 +60,5 @@ fun IGuild.removeCommand(name: String){
 fun IGuild.getAllCommands(): Map<String, String> = commands.getAllCommands()
 
 fun IGuild.log(text: String){
-    IOUtils.write(text, File("./settings/${this.stringID}/log").outputStream(), Charset.defaultCharset())
+    IOUtils.write(text, File("./guilds/${this.stringID}/log").outputStream(), Charset.defaultCharset())
 }

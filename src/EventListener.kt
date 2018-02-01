@@ -5,7 +5,6 @@ import sx.blah.discord.handle.impl.events.guild.channel.message.MessageReceivedE
 import sx.blah.discord.handle.obj.IMessage
 
 class EventListener{
-    val commandChar = '$'
     @EventSubscriber
     fun onReadyEvent(event : ReadyEvent){
         event.client.guilds.forEach { it.commands }
@@ -13,52 +12,79 @@ class EventListener{
 
     @EventSubscriber
     fun onMessageRecievedEvent(event : MessageReceivedEvent){
+        val commandChar = event.guild.settings.getCommandChar()
         if (!event.message.content.startsWith(commandChar) || event.author.stringID == event.client.ourUser.stringID) return
         val message = event.message
         val guild = event.guild
 
-        //region command
-        if (message.content.startsWith("${commandChar}command")){
-            val wordList = message.content.split(" ",  limit=4)
-            if (wordList.size <= 1){
-                event.respond("please use this command with parametes. Further help is not available")
-                return
+
+        try {
+            //region command
+            if (message.content.startsWith("${commandChar}command")){
+                val wordList = message.content.split(" ",  limit=4)
+                if (wordList.size <= 1){
+                    //event.respond("please use this command with parametes. Further help is not available")
+                    throw UsageError()
+                }
+                when (wordList[1]){
+                    "add" -> {
+                        if (guild.hasCommand(wordList[2])) {
+                            event.respond("Command \" ${wordList[2]} \" already exists, use \"!command modify\" to modify.")
+                            return
+                        }
+                        guild.addCommand(wordList[2], wordList[3])
+                        event.respond("Command \" ${wordList[2]} \" sucessfully set.")
+                        return
+                    }
+                    "del", "delete" -> {
+                        if (!guild.hasCommand(wordList[2])) {
+                            event.respond("Command \" ${wordList[2]} \" doesn't exists!")
+                            return
+                        }
+                        guild.removeCommand(wordList[2])
+                        event.respond("Command \" ${wordList[2]} \" successfully deleted!")
+                        return
+                    }
+                    "modify" -> {
+                        if (!guild.hasCommand(wordList[2])) {
+                            event.respond("Command \" ${wordList[2]} \" doesn't exists!")
+                            return
+                        }
+                        guild.addCommand(wordList[2], wordList[3])
+                        event.respond("Command \" ${wordList[2]} \" successfully modified.")
+                        return
+                    }
+                    else -> {
+                 //       event.respond("YOU did something wrong! Further help is currently not available")
+                        UsageError()
+                        return
+                    }
+                }
             }
-            when (wordList[1]){
-                "add" -> {
-                    if (guild.hasCommand(wordList[2])) {
-                        event.respond("Command \" ${wordList[2]} \" already exists, use \"!command modify\" to modify.")
-                        return
-                    }
-                    guild.addCommand(wordList[2], wordList[3])
-                    event.respond("Command \" ${wordList[2]} \" sucessfully set.")
-                    return
+            //endregion
+            //region bot
+            if (message.content.startsWith("${commandChar}bot")){
+                val wordlist = message.content.split(" ", limit=4)
+                if (wordlist.size <= 1){
+                    throw UsageError()
                 }
-                "del", "delete" -> {
-                    if (!guild.hasCommand(wordList[2])) {
-                        event.respond("Command \" ${wordList[2]} \" doesn't exists!")
-                        return
+                when (wordlist[1]){
+                    "commandchar" -> {
+                        when (wordlist[2]) {
+                           "get", "show" -> event.respond("The command char is: ${guild.settings.getCommandChar()}")
+                           "set" -> {
+                               if (wordlist.size < 4) throw UsageError()
+                               guild.settings.setCommandChar(wordlist[3])
+                               event.respond("The command char has been set to: ${guild.settings.getCommandChar()}")
+                           }
+                        }
                     }
-                    guild.removeCommand(wordList[2])
-                    event.respond("Command \" ${wordList[2]} \" successfully deleted!")
-                    return
-                }
-                "modify" -> {
-                    if (!guild.hasCommand(wordList[2])) {
-                        event.respond("Command \" ${wordList[2]} \" doesn't exists!")
-                        return
-                    }
-                    guild.addCommand(wordList[2], wordList[3])
-                    event.respond("Command \" ${wordList[2]} \" successfully modified.")
-                    return
-                }
-                else -> {
-                    event.respond("YOU did something wrong! Further help is currently not available")
-                    return
+
                 }
             }
+            //endregion
+        } catch (e: UsageError) {
         }
-        //endregion
 
         val messageToBeSend = parseMessage(message, guild.getCommand(message.content.split(" ", limit=2)[0].substring(1).trim()))
         if (!message.info.containsKey("target"))
@@ -80,6 +106,7 @@ class EventListener{
 
 
     fun parseMessage(message: IMessage, input: String) : String{
+        message.info.clear()
         val nick = message.author
         if (!input.contains("%")) {
             return input

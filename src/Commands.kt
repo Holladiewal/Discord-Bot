@@ -23,6 +23,7 @@ class CommandHandler(guild: Guild) {
         File("./guilds/${guild.stringID}").mkdir()
         commandFile = File("./guilds/${guild.stringID}/commands")
         varMap["command"] = "THIS SHOULD NEVER BE SHOWN!"
+        varMap["bot"] = "THIS SHOULD NEVER BE SHOWN!"
         if (!commandFile.exists()) {
             commandFile.createNewFile()
             varMap["help"] = "%n, You can use the following commands: %{cmdlist}."
