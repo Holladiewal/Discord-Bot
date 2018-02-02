@@ -23,6 +23,7 @@ class SettingsHandler(guild: Guild) {
         if (!file.exists()) {
             file.createNewFile()
             varMap["commandchar"] = "$"
+            varMap["qline"] = "rename"
             this.save()
         }
         this.read()
@@ -62,6 +63,13 @@ class SettingsHandler(guild: Guild) {
 
     fun getCommandChar(): Char = get("commandchar").toCharArray()[0]
     fun setCommandChar(value: String){ set("commandchar", value) }
+
+    fun getqlineaction(): String = get("qline")
+    fun setqlineaction(action: String){
+        if (listOf("rename", "kick", "ban").contains(action))
+        set("qline", action)
+        else throw UsageError()
+    }
 
 
 }

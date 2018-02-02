@@ -49,6 +49,14 @@ val IGuild.permissions: PermissionsManager
         return tmp
     }
 
+val IGuild.nicks: NickManager
+    get() {
+        if (NickManager.instances.containsKey(this.stringID)) return NickManager.instances[this.stringID]!!
+        val tmp = NickManager(this as Guild)
+        NickManager.instances.put(this.stringID, tmp)
+        return tmp
+    }
+
 fun IGuild.getCommand(name: String): String = this.commands.getCommand(name)
 fun IGuild.hasCommand(name: String): Boolean = this.commands.hasCommand(name)
 fun IGuild.addCommand(name: String, msg: String){
