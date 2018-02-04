@@ -66,7 +66,7 @@ class SettingsHandler(guild: Guild) {
 
     fun getqlineaction(): String = get("qline")
     fun setqlineaction(action: String){
-        if (listOf("rename", "kick", "ban").contains(action))
+        if (listOf("kick", "ban").contains(action))
         set("qline", action)
         else throw UsageError()
     }

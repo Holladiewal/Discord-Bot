@@ -1,11 +1,10 @@
-import org.apache.commons.io.IOUtils
 import sx.blah.discord.api.internal.json.objects.EmbedObject
 import sx.blah.discord.handle.impl.events.guild.channel.message.MessageEvent
+import sx.blah.discord.handle.impl.events.guild.member.NicknameChangedEvent
 import sx.blah.discord.handle.impl.obj.Guild
 import sx.blah.discord.handle.obj.IGuild
 import sx.blah.discord.handle.obj.IMessage
 import java.io.File
-import java.nio.charset.Charset
 import kotlin.properties.Delegates
 
 fun MessageEvent.respond(message: String, tts: Boolean = false){
@@ -68,5 +67,5 @@ fun IGuild.removeCommand(name: String){
 fun IGuild.getAllCommands(): Map<String, String> = commands.getAllCommands()
 
 fun IGuild.log(text: String){
-    IOUtils.write(text, File("./guilds/${this.stringID}/log").outputStream(), Charset.defaultCharset())
+    File("./guilds/${this.stringID}/log").appendText(text + "\n")
 }

@@ -65,6 +65,7 @@ class NickManager(val guild: Guild){
         save()
     }
 
+
     fun nickState(nick: String, user: IUser): String{
         if (ClaimedNicks.containsKey(nick) && !("${user.name}#${user.discriminator}" == ClaimedNicks[nick] || guild.permissions.getLevel(user) >= 4)) return "claimed"
         if (BlockedNicks.contains(nick) && guild.permissions.getLevel(user) <= 3) return "blocked"

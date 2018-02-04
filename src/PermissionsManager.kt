@@ -107,11 +107,14 @@ class PermissionsManager(val guild: Guild){
         this.save()
     }
 
-    fun removeRole(roleId: String){
-        class1Roles.remove(roleId)
-        class2Roles.remove(roleId)
-        class3Roles.remove(roleId)
-        class4Roles.remove(roleId)
+    fun removeRole(roleId: String, permClass: Int){
+        when (permClass){
+            1 -> class1Roles.remove(roleId)
+            2 -> class2Roles.remove(roleId)
+            3 -> class3Roles.remove(roleId)
+            4 -> class4Roles.remove(roleId)
+            else -> throw IllegalArgumentException("permClass $permClass is not allowed.")
+        }
         this.save()
     }
 }

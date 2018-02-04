@@ -14,14 +14,39 @@ class EventListener{
 
     @EventSubscriber
     fun onNickChange(event: NicknameChangedEvent){
-        when(event.guild.nicks.nickState(event.newNickname.get(), event.user)){
+        when(event.guild.nicks.nickState(event.newNickname.orElse(event.user.name), event.user)){
             "claimed" -> {
-                event.guild.setUserNickname(event.user, event.oldNickname.get())
-                event.user.orCreatePMChannel.sendMessage("The nick you tried to use has been claimed. Your Nick has been reset to its old value. If you believe this is an error, please contact your server moderator")
+                event.guild.setUserNickname(event.user, event.oldNickname.orElse(event.user.name))
+                event.user.orCreatePMChannel.sendMessage("The nick you tried to use has been claimed. Your nick change has been reverted. If you believe this is an error, contact the admins from your server")
                 return
             }
             "blocked" -> {
+                event.guild.setUserNickname(event.user, event.oldNickname.orElse(event.user.name))
+                event.user.orCreatePMChannel.sendMessage("The nick you tried to use has been blocked. Your nick change has been reverted. If you believe this is an error, contact the admins from your server")
+            }
 
+            "qlined" -> {
+                event.guild.setUserNickname(event.user, event.oldNickname.orElse(event.user.name))
+                when(event.guild.settings.getqlineaction()){
+                    "ban" -> {
+                        event.user.orCreatePMChannel.sendMessage("The nick you tried to use has been QLined on this server. As a result you have been automatically banned. If you believe this is an error, contact your server admins.")
+                        event.guild.banUser(event.user)
+                    }
+
+                    "kick" -> {
+                        event.user.orCreatePMChannel.sendMessage("The nick you tried to use has been QLined on this server. As a result you have been automatically kicked. your nick change has been reverted, therefore you should be able to rejoin safely. If you belive this was an error, please contact oyur server staff.")
+                        event.guild.kickUser(event.user)
+                    }
+                }
+
+            }
+
+            "free" -> {
+                return
+            }
+
+            else -> {
+                throw IllegalStateException("nickState returned unexpected value")
             }
         }
     }
@@ -33,10 +58,13 @@ class EventListener{
         val message = event.message
         val guild = event.guild
 
-
         try {
             //region command
             if (message.content.startsWith("${commandChar}command")){
+                if (guild.permissions.getLevel(event.author) <= 1){
+                    event.respond("That security clearance isn't good enough for this room. May I see that card please?")
+                    return
+                }
                 val wordList = message.content.split(" ",  limit=4)
                 if (wordList.size <= 1){
                     //event.respond("please use this command with parametes. Further help is not available")
@@ -88,7 +116,7 @@ class EventListener{
                     event.respond("Sorry, but your security clearance does not allow you to play with these settings.")
                     return
                 }
-                val wordlist = message.content.split(" ", limit=6)
+                val wordlist = message.content.toLowerCase().split(" ", limit=6)
                 if (wordlist.size <= 1){
                     throw UsageError()
                 }
@@ -179,7 +207,7 @@ class EventListener{
                     "log" -> {
                         var lineCount = 5
                         if (wordlist.size >= 3) lineCount = wordlist[2].toInt()
-                        File("./guilds/${guild.stringID}/log").readLines().takeLast(lineCount).forEach { event.respond(it) }
+                        File("./guilds/${guild.stringID}/log").readLines().takeLast(lineCount).forEach { event.respond(it + "\n") }
                     }
                     "roles", "clearances" -> {
                         when(wordlist[2]){
@@ -237,7 +265,7 @@ class EventListener{
                                         }
                                     }
                                     "5" -> {
-                                        event.respond("You seriously tried giving other people the security clearance of the server owner? Good try, but no... this won't work...")
+                                        event.respond("You seriously tried messsing with the security clearance of the server owner? Good try, but no... this won't work...")
                                     }
                                     else -> {
                                         event.respond("Handing out non-existing security clearances won't allow any more access than you currently have, and it will also cause A LOT of suspicion! Pro Tip: Try better next time!")
