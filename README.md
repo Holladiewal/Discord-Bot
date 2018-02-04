@@ -19,11 +19,11 @@ This ReadMe is a WIP. Expect more at a later point.
   limits usage of this command to a class (1,2,3,4,5) only
 * "%{excluderole}" / "%{roleonly}"
   exludes or limits the execution of a command to a certain set of roles. members of class 4 and 5 can alway run these commands
-* "%{withjson:<url>}"
+* "%{withjson:\<url\>}"
   gets a json from the specified url and makes it available in an array
-* "${arr:<name>:<index>}" 
+* "${arr:\<name\>:\<index\>}" 
   gets the String at the index in the specified array
-* "%{for:<varname>:<min>:<max>:<stepSize>}" and "%{endfor}"
+* "%{for:\<varname\>:\<min\>:\<max\>:\<stepSize\>}" and "%{endfor}"
   basic for loop with custom stepSize
 * and more!
 
