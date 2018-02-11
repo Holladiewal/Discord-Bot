@@ -10,8 +10,8 @@ fun main(args: Array<String>) {
     /*  TODO
     badword filter
     url filter
-    logging off all bot related actions and messages
-    "nick claiming"
+    logging off all bot related actions and messages - nearly done
+    "nick claiming" - nearly done
     link shortener
      */
 }

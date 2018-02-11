@@ -1,6 +1,5 @@
 import sx.blah.discord.api.internal.json.objects.EmbedObject
 import sx.blah.discord.handle.impl.events.guild.channel.message.MessageEvent
-import sx.blah.discord.handle.impl.events.guild.member.NicknameChangedEvent
 import sx.blah.discord.handle.impl.obj.Guild
 import sx.blah.discord.handle.obj.IGuild
 import sx.blah.discord.handle.obj.IMessage
@@ -56,6 +55,14 @@ val IGuild.nicks: NickManager
         return tmp
     }
 
+val IGuild.ranks: RankFileHandler
+    get() {
+        if (RankFileHandler.instances.containsKey(this.stringID)) return RankFileHandler.instances[this.stringID]!!
+        val tmp = RankFileHandler(this as Guild)
+        RankFileHandler.instances.put(this.stringID, tmp)
+        return tmp
+    }
+
 fun IGuild.getCommand(name: String): String = this.commands.getCommand(name)
 fun IGuild.hasCommand(name: String): Boolean = this.commands.hasCommand(name)
 fun IGuild.addCommand(name: String, msg: String){
@@ -67,5 +74,9 @@ fun IGuild.removeCommand(name: String){
 fun IGuild.getAllCommands(): Map<String, String> = commands.getAllCommands()
 
 fun IGuild.log(text: String){
-    File("./guilds/${this.stringID}/log").appendText(text + "\n")
+    File("./guilds/${this.stringID}/log").printWriter().use{ out ->
+        out.println(text)
+        out.flush()
+        out.close()
+    }
 }

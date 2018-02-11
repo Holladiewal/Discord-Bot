@@ -17,7 +17,7 @@ class PermissionsManager(val guild: Guild){
     val class2Roles = mutableListOf<String>() // bot managers
     val class3Roles = mutableListOf<String>() // moderators
     val class4Roles = mutableListOf<String>() // admins
-                                              //class 5 is owner only
+                                              // class 5 is owner only
 
     init{
         File("./guilds/${guild.stringID}/permissions").mkdirs()

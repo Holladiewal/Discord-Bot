@@ -40,7 +40,7 @@ class CommandHandler(guild: Guild) {
                 .map { it -> it.reduce()}
                 .forEach { msg ->
                     val key = msg.split(": ", limit=2)[0]
-                    varMap.put(key, msg.reduce().split("$key: ")[1].toLowerCase())
+                    varMap.put(key, msg.reduce().split("$key: ")[1])
                 }
     }
 

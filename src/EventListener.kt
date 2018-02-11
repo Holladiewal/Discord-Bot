@@ -4,9 +4,14 @@ import sx.blah.discord.handle.impl.events.guild.channel.message.MentionEvent
 import sx.blah.discord.handle.impl.events.guild.channel.message.MessageReceivedEvent
 import sx.blah.discord.handle.impl.events.guild.member.NicknameChangedEvent
 import sx.blah.discord.handle.obj.IMessage
+import sx.blah.discord.handle.obj.IRole
+import java.awt.Color
 import java.io.File
+import java.util.*
 
 class EventListener{
+
+    // TODO: check nick on server join.
     @EventSubscriber
     fun onReadyEvent(event : ReadyEvent){
         event.client.guilds.forEach { it.commands }
@@ -163,10 +168,22 @@ class EventListener{
                                     "add", "set" ->{
                                         guild.nicks.qlineNick(wordlist[4])
                                         guild.log("QLINE: ${message.author.name}#${message.author.discriminator} added ${wordlist[4]} to the list of QLined nicks.")
+                                        val tmpList = guild.getUsersByName(wordlist[4], true)
+                                        if (tmpList.isNotEmpty()){
+                                            tmpList.forEach {
+                                                guild.setUserNickname(it, null)
+                                                when (guild.settings.getqlineaction()){
+                                                    "kick" -> guild.kickUser(it, "You have been automatically kicked due to your nick being qlined by an admin.")
+                                                    "ban" -> guild.banUser(it, "You have been automatically banned due to your nick being qlined by an admin.")
+                                                }
+                                            }
+                                        }
+                                        event.respond("Succesfully qlined ${wordlist[4]}")
                                     }
                                     "remove" ->{
                                         guild.nicks.unQlineNick(wordlist[4])
                                         guild.log("QLINE: ${message.author.name}#${message.author.discriminator} removed ${wordlist[4]} from the list of QLined nicks.")
+                                        event.respond("Succesfully un-qlined ${wordlist[4]}")
                                     }
                                 }
                             }
@@ -180,11 +197,18 @@ class EventListener{
                                     "add", "set" -> {
                                         guild.nicks.blockNick(wordlist[4])
                                         guild.log("BLOCK: ${message.author.name}#${message.author.discriminator} added ${wordlist[4]} to the list of blocked nicks.")
+                                        val tmpList = guild.getUsersByName(wordlist[4], true)
+                                        if (tmpList.isNotEmpty()){
+                                            tmpList.forEach {
+                                                guild.setUserNickname(it, null)
+                                            }
+                                        }
+                                        event.respond("Succesfully blocked ${wordlist[4]}")
                                     }
-
                                     "remove", "unblock" -> {
                                         guild.nicks.unblockNick(wordlist[4])
                                         guild.log("BLOCK: ${message.author.name}#${message.author.discriminator} removed ${wordlist[4]} from the list of blocked nicks.")
+                                        event.respond("Succesfully unblocked ${wordlist[4]}")
                                     }
                                 }
                             }
@@ -194,10 +218,12 @@ class EventListener{
                                     "claim", "add" -> {
                                         guild.nicks.claimNick(wordlist[4], event.author)
                                         guild.log("CLAIM: ${wordlist[4]} has been claimed by ${event.author.name}#${event.author.discriminator}")
+                                        event.respond("Succesfully claimed ${wordlist[4]}")
                                     }
-                                    "unclaim, free" -> {
+                                    "unclaim", "free", "remove" -> {
                                         if (guild.nicks.getClaimedNickOwner(wordlist[4]) == "${event.author.name}#${event.author.discriminator}" || guild.permissions.getLevel(event.author) >= 4){
                                             guild.nicks.unclaimNick(wordlist[4])
+                                            event.respond("Succesfully unclaimed ${wordlist[4]}")
                                         }
                                     }
                                 }
@@ -217,21 +243,29 @@ class EventListener{
                                         if (guild.permissions.getLevel(event.author) >= 2) {
                                             guild.permissions.addRole(wordlist[4], 1)
                                         }
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 1")
+                                        event.respond("Clearances updated.")
                                     }
                                     "2" ->{
                                         if (guild.permissions.getLevel(event.author) >= 3) {
                                             guild.permissions.addRole(wordlist[4], 2)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 2")
                                     }
                                     "3" -> {
                                         if (guild.permissions.getLevel(event.author) >= 4) {
                                             guild.permissions.addRole(wordlist[4], 3)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 3")
                                     }
                                     "4" -> {
                                         if (guild.permissions.getLevel(event.author) >= 5) {
                                             guild.permissions.addRole(wordlist[4], 4)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 4")
                                     }
                                     "5" -> {
                                         event.respond("You seriously tried giving other people the security clearance of the server owner? Good try, but no... this won't work...")
@@ -246,23 +280,31 @@ class EventListener{
                                 when(wordlist[3]) {
                                     "1" -> {
                                         if (guild.permissions.getLevel(event.author) >= 2) {
-                                            guild.permissions.removeRole(wordlist[4])
+                                            guild.permissions.removeRole(wordlist[4], 1)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 1")
                                     }
                                     "2" -> {
                                         if (guild.permissions.getLevel(event.author) >= 3) {
-                                            guild.permissions.removeRole(wordlist[4])
+                                            guild.permissions.removeRole(wordlist[4], 2)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 2")
                                     }
                                     "3" -> {
                                         if (guild.permissions.getLevel(event.author) >= 4) {
-                                            guild.permissions.removeRole(wordlist[4])
+                                            guild.permissions.removeRole(wordlist[4], 3)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 3")
                                     }
                                     "4" -> {
                                         if (guild.permissions.getLevel(event.author) >= 5) {
-                                            guild.permissions.removeRole(wordlist[4])
+                                            guild.permissions.removeRole(wordlist[4], 4)
                                         }
+                                        event.respond("Clearances updated.")
+                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 4")
                                     }
                                     "5" -> {
                                         event.respond("You seriously tried messsing with the security clearance of the server owner? Good try, but no... this won't work...")
@@ -303,6 +345,8 @@ class EventListener{
 
     fun parseMessage(message: IMessage, input: String) : String{
         message.info.clear()
+        @Suppress("NAME_SHADOWING")
+        var input = input
         val nick = message.author
         if (!input.contains("%")) {
             return input
@@ -310,7 +354,7 @@ class EventListener{
 
         var retVal = input
         var inpList = input.split(" ")
-        inpList.forEach{
+        inpList.forEach {
             if (!it.startsWith("%")) return@forEach
             //region %{cmdlist}
             var tmpString = ""
@@ -330,6 +374,36 @@ class EventListener{
                 retVal = retVal.replace("%{pm}", "")
             }
             //endregion
+            //region %{classneeded}
+            if (retVal.contains("%{classneeded:")) {
+                val id = retVal.substringAfter("%{classneeded:").substringBefore("}")
+                if (message.guild.permissions.getLevel(nick) <= id.toCharArray()[0].toString().toInt() ) return "Your clearance is not enough to remove the lockdown on this command."
+                retVal = retVal.replace("%{classneeded:$id}", "")
+            }
+            //endregion
+
+            //region %{params}
+            if (retVal.contains("%{params:")){
+                val index = retVal.substringAfter("%{params:").substringBefore("}")
+                val wordList = message.content.split(" ") as MutableList
+                wordList.removeAt(0)
+                when {
+                    index == "all" -> {
+                        var tmpString = ""
+                        wordList.forEach { tmpString += it + " " }
+                        tmpString = tmpString.trim()
+                        retVal = retVal.replace("%{params:$index}", tmpString)
+                        input = input.replace("%{params:$index}", tmpString)
+                    }
+                    wordList.size <= index.toInt() -> {
+                        retVal = retVal.replace("%{params:$index}", wordList[index.toInt()])
+                        input = input.replace("%{params:$index}", wordList[index.toInt()])
+                    }
+                    else -> return "You seem to have lost some arguments...."
+                }
+            }
+            //endregion
+            //everything that may use a param shall come after this!
             //region %{redirect}
             if (retVal.contains("%{redirect:")){
                 val id = retVal.substringAfter("%{redirect:").substringBefore("}")
@@ -338,7 +412,51 @@ class EventListener{
             }
 
             //endregion
+            //region %{togglerole}
+            if (retVal.contains("%{togglerole:")){
+                val id = retVal.substringAfter("%{togglerole:").substringBefore("}")
+                retVal = if (message.guild.getRolesByName(id).size > 0){
+                    if (!message.guild.ranks.isRank(id)) return "Sorry, but that is not a rank, just a role..... IF you really want it, ask a human to give it to you!"
+                    if (message.guild.getRolesForUser(nick).any { it.name == id }){
+                        nick.removeRole(message.guild.getRolesByName(id)[0])
+                        retVal.replace("%{togglerole:$id}", "You left: $id") //commented due to design question: return a text value, or replace it in input and make a suppress key?
+                    } else{
+                        nick.addRole(message.guild.getRolesByName(id)[0])
+                        retVal.replace("%{togglerole:$id}", "You joined: $id")
+                    }
+                } else{
+                    return "Sorry, but I can't find that role... Sure you got the right one?"
+                }
+            }
+            //endregion
+            //region %{createrole}
+            if (retVal.contains("%{createrole:")){
+                val id = retVal.substringAfter("%{createrole:").substringBefore("}")
+                val role = message.guild.createRole()
+                val rand = Random()
+                role.changeName(id)
+                role.changeColor(Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255)))
+                role.changeMentionable(true)
+                message.guild.ranks.addRank(id)
+                retVal = retVal.replace("%{createrole:$id}", "Role created!")
+            }
+            //endregion
+            //region %{deleterole}
+            if (retVal.contains("%{deleterole:")){
+                val id = retVal.substringAfter("%{deleterole:").substringBefore("}")
+                message.guild.ranks.removeRank(id)
+                message.guild.roles.removeIf { it.name == id }
+                retVal = retVal.replace("%{deleterole:$id}", "Role deleted!")
+            }
+            //endregion
 
+            // this must ALWAYS be the last, otherwise it may remove un-interpreted keys!
+            // region %{suppress}
+            if (retVal.contains("%{suppress:")){
+                val textToSuppress = retVal.substringAfter("%{suppress:").substringBefore("}")
+                retVal = retVal.replace("%{suppress:$textToSuppress}", "")
+            }
+            //endregion
         }
         return retVal
     }

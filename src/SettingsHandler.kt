@@ -57,9 +57,12 @@ class SettingsHandler(guild: Guild) {
 
     private fun get(key: String): String = if (varMap.containsKey(key)) varMap[key]!! else throw IllegalArgumentException("There is no setting '$key' existent.")
 
-    private fun set(key: String, value: String){ varMap.put(key, value) }
+    private fun set(key: String, value: String){
+        varMap.put(key, value)
+        save()
+    }
 
-    private fun remove(key: String){ varMap.remove(key) }
+    //private fun remove(key: String){ varMap.remove(key) }
 
     fun getCommandChar(): Char = get("commandchar").toCharArray()[0]
     fun setCommandChar(value: String){ set("commandchar", value) }
