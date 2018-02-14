@@ -23,7 +23,7 @@ class SettingsHandler(guild: Guild) {
         if (!file.exists()) {
             file.createNewFile()
             varMap["commandchar"] = "$"
-            varMap["qline"] = "rename"
+            varMap["qline"] = "kick"
             this.save()
         }
         this.read()
@@ -69,10 +69,16 @@ class SettingsHandler(guild: Guild) {
 
     fun getqlineaction(): String = get("qline")
     fun setqlineaction(action: String){
-        if (listOf("kick", "ban").contains(action))
+        if (listOf("kick", "ban", "assignrole").contains(action))
         set("qline", action)
         else throw UsageError()
     }
+
+    fun getTimeoutRole(): String = get("timeoutrole")
+    fun setTimeoutRole(id: String){set("timeoutrole", id)}
+
+    fun getTimeoutChannel(): String = get("timeoutchannel")
+    fun setTimeoutChannel(id: String){set("timeoutchannel", id)}
 
 
 }

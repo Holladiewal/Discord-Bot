@@ -7,6 +7,7 @@ import java.io.File
 import kotlin.properties.Delegates
 
 fun MessageEvent.respond(message: String, tts: Boolean = false){
+    if (message.isNotBlank() && message.isNotEmpty())
     this.channel.sendMessage(message, tts)
 }
 
