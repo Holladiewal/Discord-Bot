@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Discord-Bot:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bdb7cc44-238f-4cb3-98e3-650f8e47e104" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/EventListener.kt" afterPath="$PROJECT_DIR$/src/EventListener.kt" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#173#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Start.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding>
+                <element signature="e#122#123#0" expanded="true" />
+                <element signature="e#155#156#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventListener.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/EventListener.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="630" column="20" lean-forward="true" selection-start-line="630" selection-start-column="20" selection-end-line="630" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#513#0" expanded="true" />
+                <element signature="e#6335#6351#0" expanded="false" />
+                <element signature="e#9561#10279#0" expanded="false" />
+                <element signature="e#9763#10231#0" expanded="false" />
+                <element signature="e#14593#15816#0" expanded="false" />
+                <element signature="e#15865#16244#0" expanded="false" />
+                <element signature="e#19713#20477#0" expanded="false" />
+                <element signature="e#20537#20917#0" expanded="false" />
+                <element signature="e#21131#21497#0" expanded="false" />
+                <element signature="e#22164#22441#0" expanded="false" />
+                <element signature="e#22487#28591#0" expanded="false" />
+                <element signature="e#22571#25533#0" expanded="false" />
+                <element signature="e#25575#28543#0" expanded="false" />
+                <marker date="1521068582723" expanded="true" signature="37737:37853" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsHandler.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SettingsHandler.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
+              <folding>
+                <element signature="n#!!block;n#save#0;n#!!block;n#SettingsHandler#0" expanded="false" />
+                <element signature="n#!!block;n#read#0;n#!!block;n#SettingsHandler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NickManager.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NickManager.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1908">
+              <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PermissionsManager.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PermissionsManager.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#131#0" expanded="true" />
+                <element signature="n#!!block;n#save#0;n#!!block;n#PermissionsManager#0" expanded="false" />
+                <element signature="n#!!block;n#read#0;n#!!block;n#PermissionsManager#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Extensions.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Extensions.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#321#0" expanded="true" />
+                <element signature="n#!!block;n#respond#1" expanded="false" />
+                <element signature="n#!!block;n#reduce#0" expanded="false" />
+                <element signature="e#1005#1250#0" expanded="false" />
+                <element signature="e#1299#1548#0" expanded="false" />
+                <element signature="e#1603#1864#0" expanded="false" />
+                <element signature="e#1906#2139#0" expanded="false" />
+                <element signature="n#!!block;n#removeCommand#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Tag Library Descriptor" />
+        <option value="Kotlin Class" />
+        <option value="Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Invalid</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/untitled1" value="1502478057020" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/secretFile.kt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/ConfigAdapter.kt" />
+        <option value="$PROJECT_DIR$/commands-293127489180532736" />
+        <option value="$PROJECT_DIR$/src/CommandHandler.kt" />
+        <option value="$PROJECT_DIR$/src/Start.kt" />
+        <option value="$PROJECT_DIR$/src/Start.java" />
+        <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/src/UsageError.kt" />
+        <option value="$PROJECT_DIR$/src/Main.kt" />
+        <option value="$PROJECT_DIR$/src/Commands.kt" />
+        <option value="$PROJECT_DIR$/src/PermissionsManager.kt" />
+        <option value="$PROJECT_DIR$/src/RoleFileHandler.kt" />
+        <option value="$PROJECT_DIR$/src/RankFileHandler.kt" />
+        <option value="$PROJECT_DIR$/src/Extensions.kt" />
+        <option value="$PROJECT_DIR$/src/SettingsHandler.kt" />
+        <option value="$PROJECT_DIR$/src/NickManager.kt" />
+        <option value="$PROJECT_DIR$/src/EventListener.kt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="809" />
+    <option name="y" value="-5" />
+    <option name="width" value="861" />
+    <option name="height" value="945" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="guilds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="guilds" type="462c0819:PsiDirectoryNode" />
+              <item name="293127489180532736" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="guilds" type="462c0819:PsiDirectoryNode" />
+              <item name="293127489180532736" type="462c0819:PsiDirectoryNode" />
+              <item name="nicks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Discord_Bot_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Discord-Bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Discord-Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\Discord-Bot\guilds\293127489180532736" />
+      <recent name="C:\IdeaProjects\Discord-Bot\src" />
+      <recent name="C:\IdeaProjects\Discord-Bot\lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\Discord-Bot\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Start" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Discord-Bot" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Discord-Bot" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Kotlin.MainKt" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdb7cc44-238f-4cb3-98e3-650f8e47e104" name="Default" comment="" />
+      <created>1516557497892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1516557497892</updated>
+      <workItem from="1516557504560" duration="1865000" />
+      <workItem from="1516559384988" duration="1462000" />
+      <workItem from="1516624120105" duration="12851000" />
+      <workItem from="1516652594372" duration="7636000" />
+      <workItem from="1516803392425" duration="16649000" />
+      <workItem from="1516995905218" duration="4077000" />
+      <workItem from="1517003603863" duration="14542000" />
+      <workItem from="1517093891517" duration="1087000" />
+      <workItem from="1517242160907" duration="6291000" />
+      <workItem from="1517346699391" duration="2405000" />
+      <workItem from="1517437832110" duration="617000" />
+      <workItem from="1517493529324" duration="14957000" />
+      <workItem from="1517520019241" duration="28181000" />
+      <workItem from="1517687460840" duration="5624000" />
+      <workItem from="1517757119015" duration="3962000" />
+      <workItem from="1517857787130" duration="1105000" />
+      <workItem from="1517864766881" duration="1492000" />
+      <workItem from="1517866345025" duration="3043000" />
+      <workItem from="1518194081817" duration="7358000" />
+      <workItem from="1518385538717" duration="3523000" />
+      <workItem from="1518624123827" duration="16180000" />
+      <workItem from="1518808653888" duration="2516000" />
+      <workItem from="1518878561102" duration="714000" />
+      <workItem from="1520888021622" duration="2931000" />
+      <workItem from="1521063028898" duration="5778000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Stuff">
+      <created>1516660009429</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1516660009429</updated>
+    </task>
+    <task id="LOCAL-00002" summary="More Stuff">
+      <created>1516900521079</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1516900521079</updated>
+    </task>
+    <task id="LOCAL-00003" summary="handed over the command handler from static to extending IGuild. commands are now stored under ./guilds/$guildid/commands instead of ./commands-$guildid. Moved all extensions to seperate file and made necessary changes to account for the new commandhandler location">
+      <created>1517098525034</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1517098525034</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added PermissionManager&#10;Added NickManager&#10;CHanged stuff&#10;Read the diff!">
+      <created>1517513655972</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1517513655972</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lots of stuff, see diff">
+      <created>1517612612127</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1517612612128</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lots of stuff, see diff">
+      <created>1517780589672</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1517780589672</updated>
+    </task>
+    <task id="LOCAL-00007" summary="lots of stuff, see diff">
+      <created>1518388573218</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1518388573218</updated>
+    </task>
+    <task id="LOCAL-00008" summary="lots of stuff, see diff">
+      <created>1518651984746</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1518651984747</updated>
+    </task>
+    <task id="LOCAL-00009" summary="lots of stuff, see diff">
+      <created>1518652689030</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1518652689030</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="166846000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33695653" sideWeight="0.4946695" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5053305" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32717392" sideWeight="0.4978678" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="455" y="206" width="1191" height="748" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15618336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30108696" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17697228" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Stuff" />
+    <MESSAGE value="More Stuff" />
+    <MESSAGE value="handed over the command handler from static to extending IGuild. commands are now stored under ./guilds/$guildid/commands instead of ./commands-$guildid. Moved all extensions to seperate file and made necessary changes to account for the new commandhandler location" />
+    <MESSAGE value="Added PermissionManager&#10;Added NickManager&#10;CHanged stuff&#10;Read the diff!" />
+    <MESSAGE value="lots of stuff, see diff" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of stuff, see diff" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="33" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>wordList.size</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>wordList.size &lt;= index.toInt()</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>guild.getRolesByName(&quot;Timeout&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>guild.getRolesByName(wordlist[3])</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.guild.getRolesForUser(nick).any { it.name == id }</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.guild.getRolesForUser(nick)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>message.guild.getRolesByName(id)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>retVal</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>retVal.contains(&quot;%{togglerole:}&quot;)</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IMessage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/events/guild/channel/message/MessageEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/org/apache/commons/io/filefilter/NameFileFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-343">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guilds/293127489180532736/commands">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="57" lean-forward="false" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/FilenameFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommandHandler.kt" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="1338" column="19" lean-forward="false" selection-start-line="1338" selection-start-column="19" selection-end-line="1338" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/secretFile.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="80" lean-forward="false" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/org/apache/commons/io/IOUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="729" column="23" lean-forward="false" selection-start-line="729" selection-start-column="23" selection-end-line="729" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/api/events/EventSubscriber.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start.kt" />
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/Discord4J.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/events/ReadyEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/api/events/Event.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/events/guild/member/GuildMemberEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/TypeAliases.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsageError.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="80" column="17" lean-forward="false" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/events/guild/member/NicknameChangedEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guilds/293127489180532736/log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guilds/293127489180532736/commands">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/obj/Guild.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IGuild.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="385" column="15" lean-forward="false" selection-start-line="385" selection-start-column="15" selection-end-line="385" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RankFileHandler.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/generated/_Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="2160" column="244" lean-forward="true" selection-start-line="2160" selection-start-column="244" selection-end-line="2160" selection-end-column="244" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PermissionsManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#131#0" expanded="true" />
+            <element signature="n#!!block;n#save#0;n#!!block;n#PermissionsManager#0" expanded="false" />
+            <element signature="n#!!block;n#read#0;n#!!block;n#PermissionsManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IIDLinkedObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IVoiceState.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/obj/VoiceChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IVoiceChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/StatusType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IPresence.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/obj/VoiceState.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/obj/User.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="169" column="29" lean-forward="false" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IUser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Extensions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#321#0" expanded="true" />
+            <element signature="n#!!block;n#respond#1" expanded="false" />
+            <element signature="n#!!block;n#reduce#0" expanded="false" />
+            <element signature="e#1005#1250#0" expanded="false" />
+            <element signature="e#1299#1548#0" expanded="false" />
+            <element signature="e#1603#1864#0" expanded="false" />
+            <element signature="e#1906#2139#0" expanded="false" />
+            <element signature="n#!!block;n#removeCommand#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SettingsHandler.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
+          <folding>
+            <element signature="n#!!block;n#save#0;n#!!block;n#SettingsHandler#0" expanded="false" />
+            <element signature="n#!!block;n#read#0;n#!!block;n#SettingsHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guilds/293127489180532736/nicks/zlined">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guilds/293127489180532736/settings">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NickManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1908">
+          <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/obj/Channel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="163" column="26" lean-forward="false" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/text/StringsJVM.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/api/events/EventDispatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7218">
+          <caret line="458" column="0" lean-forward="false" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
+          <folding>
+            <marker date="1517348319151" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1517348319151" expanded="false" signature="150:1281" ph="..." />
+            <marker date="1517348319151" expanded="true" signature="1883:2189" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="2241:2477" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="2548:2777" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="2831:2927" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="3000:3079" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="3134:3216" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="3290:3355" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="3411:3422" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="3479:3485" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="3561:3678" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="3611:3670" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="3733:3744" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="3801:3807" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="3882:3999" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="3932:3991" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="4058:4069" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="4126:4132" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="4211:4328" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="4261:4320" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="4445:7399" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="4913:4997" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="5114:5197" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="5299:5383" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="5504:6759" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="6848:7381" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="7516:8295" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="7992:8277" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="8356:8600" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="8680:8917" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="8980:9075" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9157:9235" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9320:9401" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9505:9569" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9659:9785" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9700:9777" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9886:10018" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="9927:10004" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="10134:10272" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="10175:10252" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="10362:10428" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="10529:10602" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="10724:11315" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="10959:11021" ph="handle(event) → {" />
+            <marker date="1517348319151" expanded="false" signature="11245:11260" ph="}" />
+            <marker date="1517348319151" expanded="true" signature="11369:11575" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="11627:11638" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="11683:11689" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="11760:12916" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="11856:11972" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="12057:12908" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="12973:14054" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="13183:14035" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="14134:14471" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="14189:14463" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="14511:15713" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="14737:14785" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="14808:15705" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="14858:15693" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="15792:16479" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="15865:15876" ph="{}" />
+            <marker date="1517348319151" expanded="true" signature="15957:16473" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="16584:17528" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="16873:17040" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="17078:17093" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="17117:17127" ph=" }" />
+            <marker date="1517348319151" expanded="false" signature="17168:17183" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="17217:17227" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="17282:17330" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="17369:17384" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="17405:17415" ph=" }" />
+            <marker date="1517348319151" expanded="false" signature="17449:17464" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="17512:17522" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="17614:18743" ph="{...}" />
+            <marker date="1517348319151" expanded="true" signature="18019:18268" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="18306:18321" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="18343:18353" ph=" }" />
+            <marker date="1517348319151" expanded="false" signature="18394:18409" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="18446:18456" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="18511:18563" ph="{...}" />
+            <marker date="1517348319151" expanded="false" signature="18602:18617" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="18638:18648" ph=" }" />
+            <marker date="1517348319151" expanded="false" signature="18682:18697" ph=" { " />
+            <marker date="1517348319151" expanded="false" signature="18727:18737" ph=" }" />
+            <marker date="1517348319151" expanded="true" signature="18780:18940" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EventListener.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="630" column="20" lean-forward="true" selection-start-line="630" selection-start-column="20" selection-end-line="630" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#513#0" expanded="true" />
+            <element signature="e#6335#6351#0" expanded="false" />
+            <element signature="e#9561#10279#0" expanded="false" />
+            <element signature="e#9763#10231#0" expanded="false" />
+            <element signature="e#14593#15816#0" expanded="false" />
+            <element signature="e#15865#16244#0" expanded="false" />
+            <element signature="e#19713#20477#0" expanded="false" />
+            <element signature="e#20537#20917#0" expanded="false" />
+            <element signature="e#21131#21497#0" expanded="false" />
+            <element signature="e#22164#22441#0" expanded="false" />
+            <element signature="e#22487#28591#0" expanded="false" />
+            <element signature="e#22571#25533#0" expanded="false" />
+            <element signature="e#25575#28543#0" expanded="false" />
+            <marker date="1521068582723" expanded="true" signature="37737:37853" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Discord-Bot:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Discord-Bot</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>KotlinJavaRuntime</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

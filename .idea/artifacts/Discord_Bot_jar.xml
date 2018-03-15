@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Discord-Bot:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Discord_Bot_jar</output-path>
+    <root id="archive" name="Discord-Bot.jar">
+      <element id="module-output" name="Discord-Bot" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-test.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8.jar" path-in-jar="/" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
