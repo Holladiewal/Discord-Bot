@@ -13,12 +13,12 @@ This ReadMe is a WIP. Expect more at a later point.
   sends the whole message to the calling user in a pm
 * "%{redirect:<channelID>}"
   sends the whole message in the channel denoted by its channelID on the current guild only
-
-## Planned Keys:
 * "%{classneeded}"
   limits usage of this command to a class (1,2,3,4,5) only
 * "%{excluderole}" / "%{roleonly}"
   exludes or limits the execution of a command to a certain set of roles. members of class 4 and 5 can alway run these commands
+
+## Planned Keys:
 * "%{withjson:\<url\>}"
   gets a json from the specified url and makes it available in an array
 * "${arr:\<name\>:\<index\>}" 
