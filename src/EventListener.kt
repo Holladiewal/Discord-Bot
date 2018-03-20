@@ -11,10 +11,24 @@ import java.util.*
 
 class EventListener {
 
-    // TODO: check nick on server join.
+    val arrays : MutableMap<String, MutableMap<String, MutableList<String>>> = mutableMapOf() // Map for guild, Map for array name, List for content
+    val vars : MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+
+    fun isNameFree(guild: String, name: String): Boolean{
+        return !(arrays[guild]!!.containsKey(name) || vars[guild]!!.containsKey(name))
+    }
+
+    fun type(guild: String, name: String): String{
+        return if (arrays[guild]!!.containsKey(name)) "ARRAY" else if (vars[guild]!!.containsKey(name)) "VAR" else "NONE"
+    }
+
     @EventSubscriber
     fun onReadyEvent(event: ReadyEvent) {
-        event.client.guilds.forEach { it.commands }
+        event.client.guilds.forEach {
+            it.commands
+            arrays.getOrPut(it.stringID, {mutableMapOf()})
+            vars.getOrPut(it.stringID, { mutableMapOf()})
+        }
     }
 
     @EventSubscriber
@@ -47,7 +61,7 @@ class EventListener {
             }
 
             "zlined" -> {
-
+                return // No need to renick when somebody got zlined, as they shouldn't be visible to the entire server anyway
             }
 
             "free" -> {
@@ -476,16 +490,20 @@ class EventListener {
                 }
                 Pair(tmpString, 0)
             }
+
             key.startsWith("%n") || key.startsWith("%{nick}") -> {
                 Pair(message.author.getDisplayName(message.guild), 0)
             }
+
             key.startsWith("%m") || key.startsWith("%{mention}") -> {
                 Pair(message.author.mention(), 0)
             }
+
             key.startsWith("%{pm}") -> {
                 message.info["target"] = "pm"
                 Pair("", 0)
             }
+
             key.startsWith("%{params:") -> {
                 var index = key.substringAfter("%{params:").substringBefore("}")
                 index = if (index.startsWith("%")) parseKey(message, index).first else index
@@ -498,29 +516,54 @@ class EventListener {
                         tmpString = tmpString.trim()
                         Pair(tmpString, 0)
                     }
-                    wordList.size <= index.toInt() -> {
+                    wordList.size >= index.toInt() -> {
                         Pair(wordList[index.toInt()], 0)
                     }
                     else -> Pair("You seem to have lost some arguments....", -1)
                 }
             }
+
             key.startsWith("%{classneeded:") -> {
                 var id = key.substringAfter("%{classneeded:").substringBefore("}")
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
-                if (message.guild.permissions.getLevel(message.author) <= id.toCharArray()[0].toString().toInt()) return Pair("Your clearance is not enough to remove the lockdown on this command.", -1)
+                if (message.guild.permissions.getLevel(message.author) <= id.toCharArray()[0].toString().toInt()){
+                    message.info["blocked"] = "true"
+                    return Pair("Your clearance is not enough to remove the lockdown on this command.", -1)}
                 Pair("", 0)
             }
+
+            key.startsWith("%{roleneeded:") -> {
+                var id = key.substringAfter("%{roleneeded:").substringBefore("}")
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
+                if (!message.author.hasRole(message.guild.getRoleByID(id.toLong()))){
+                    message.info["blocked"] = "true"
+                    return Pair("You don't have the required role! Go and hide before I eat you", -1)
+                }
+                Pair("", 0)
+            }
+
+            key.startsWith("%{excluderole:") -> {
+                var id = key.substringAfter("%{roleneeded:").substringBefore("}")
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
+                if (message.author.hasRole(message.guild.getRoleByID(id.toLong()))){
+                    message.info["blocked"] = "true"
+                    return Pair("You don't have the required role! Go and hide before I eat you", -1)
+                }
+                Pair("", 0)
+            }
+
             key.startsWith("%{redirect:") -> {
                 if (key.contains("%{redirect:")) {
                     var id = key.substringAfter("%{redirect:").substringBefore("}")
-                    id = if (id.startsWith("%")) parseKey(message, key).first else id
+                    id = if (id.startsWith("%")) parseKey(message, id).first else id
                     message.info["target"] = id
                 }
                 Pair("", 0)
             }
+
             key.startsWith("%{togglerole:") -> {
                 var id = key.substringAfter("%{togglerole:").substringBefore("}")
-                id = if (id.startsWith("%")) parseKey(message, key).first else id
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.getRolesByName(id).size > 0) {
                     if (!message.guild.ranks.isRank(id)) return Pair("Sorry, but that is not a rank, just a role..... IF you really want it, ask a human to give it to you!", -1)
                     if (message.guild.getRolesForUser(message.author).any { it.name == id }) {
@@ -534,9 +577,10 @@ class EventListener {
                     Pair("Sorry, but I can't find that role... Sure you got the right one?", -1)
                 }
             }
+
             key.startsWith("%{giverole:") -> {
                 var id = key.substringAfter("%{togglerole:").substringBefore("}")
-                id = if (id.startsWith("%")) parseKey(message, key).first else id
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.getRolesByName(id).size > 0) {
                     if (!message.guild.ranks.isRank(id)) return Pair("Sorry, but that is not a rank, just a role..... IF you really want it, ask a human to give it to you!", -1)
                     if (!message.guild.getRolesForUser(message.author).any { it.name == id }) {
@@ -547,9 +591,10 @@ class EventListener {
                     Pair("Sorry, but I can't find that role... Sure you got the right one?", -1)
                 }
             }
+
             key.startsWith("%{takerole:") -> {
                 var id = key.substringAfter("%{togglerole:").substringBefore("}")
-                id = if (id.startsWith("%")) parseKey(message, key).first else id
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.getRolesByName(id).size > 0) {
                     if (!message.guild.ranks.isRank(id)) return Pair("Sorry, but that is not a rank, just a role..... IF you really want to get rid of it, ask a human to take it from you!", -1)
                     if (message.guild.getRolesForUser(message.author).any { it.name == id }) {
@@ -560,9 +605,10 @@ class EventListener {
                     Pair("Sorry, but I can't find that role... Sure you got the right one?", -1)
                 }
             }
+
             key.startsWith("%{createrole:") -> {
                 var id = key.substringAfter("%{createrole:").substringBefore("}")
-                id = if (id.startsWith("%")) parseKey(message, key).first else id
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
                 val role = message.guild.createRole()
                 val rand = Random()
                 role.changeName(id)
@@ -571,21 +617,102 @@ class EventListener {
                 message.guild.ranks.addRank(id)
                 Pair("Role created!", 0)
             }
+
             key.startsWith("%{deleterole:") -> {
                 var id = key.substringAfter("%{deleterole:").substringBefore("}")
-                id = if (id.startsWith("%")) parseKey(message, key).first else id
+                id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.ranks.isRank(id)) {
                     message.guild.ranks.removeRank(id)
                     message.guild.roles.removeIf { it.name == id }
                 }
                 Pair("Role deleted!", 0)
             }
+
+            key.startsWith("%{clear:") -> {
+                var numberOfPosts = key.substringAfter("%{clear:").substringBefore("}")
+                numberOfPosts = if (numberOfPosts.startsWith("%")) parseKey(message, numberOfPosts).first else numberOfPosts
+                var tmpString = ""
+                message.channel.getMessageHistory(numberOfPosts.toInt()).forEach {
+                    tmpString += it.content
+                    it.delete()
+                }
+                Pair(tmpString, 0)
+            }
+
+            key.startsWith("%{if:") -> {
+                var cond1 = key.substringAfter("%{if:").substringBefore(":")
+                if (cond1.startsWith("%")) cond1 = parseKey(message, cond1).first
+                var cond2 = key.substringAfter("$cond1:").substringBefore("}")
+                if (cond2.startsWith("%")) cond2 = parseKey(message, cond2).first
+                return if (cond1 == cond2) Pair("true", 1) else Pair("false", 0)
+            }
+
+            key.startsWith("%{var:") -> {
+                val guild = message.guild.stringID
+                var name = key.substringAfter("%{var:").substringBefore(":")
+                if (name.startsWith("%")) name = parseKey(message, name).first
+
+                if (type(guild, name) == "VAR") Pair(vars[guild]!![name]!!, 0) else Pair("Not found", -1)
+            }
+
+            key.startsWith("%{array:") -> {
+                val guild = message.guild.stringID
+                var name = key.substringAfter("%{array:").substringBefore(":")
+                if (name.startsWith("%")) name = parseKey(message, name).first
+                var index = key.substringAfter("%{array:").substringBefore(":")
+                if (index.startsWith("%")) index = parseKey(message, index).first
+
+                if (type(guild, name) == "ARRAY") Pair(arrays[guild]!![name]!![index.toInt()], 0) else Pair("Not found", -1)
+            }
+
+            key.startsWith("%{for:") -> {
+                var varname = key.substringAfter("%{for:").substringBefore(":")
+                if (varname.startsWith("%")) varname = parseKey(message, varname).first
+
+                var min = key.substringAfter("$varname:").substringBefore(":")
+                if (min.startsWith("%")) min = parseKey(message, min).first
+
+                var max = key.substringAfter("$min:").substringBefore(":")
+                if (max.startsWith("%")) max = parseKey(message, max).first
+
+                var stepSize = key.substringAfter("$max:").substringBefore(":")
+                if (stepSize.startsWith("%")) stepSize = parseKey(message, stepSize).first
+
+                val lines = key.substringAfter("$stepSize:").substringBefore("}").split("\n")
+
+                for (i in min.toInt()..max.toInt() step stepSize.toInt()){
+                    vars[message.guild.stringID]!![varname] = i.toString()
+                    lines.forEach {
+                        val result = parseKey(message, it)
+                        if (result.second < 0){
+                            return result
+                        }
+                    }
+                }
+
+                Pair("Loop finished", 0)
+            }
+
             key.startsWith("%{outcome:") -> {
                 val id = key.substringAfter("%{outcome:").substringBefore("}")
                 Pair("${parseKey(message, id).second}", 0)
 
             }
-            key.startsWith("%{suppress:") -> Pair("", 0)
+
+            key.startsWith("%{suppress:") -> {
+                if (key.substringAfter("%{suppress:").substringBefore("}").startsWith("%"))
+                    parseKey(message, key.substringAfter("%{suppress:").substringBefore("}"))
+                Pair("", 0)
+            }
+
+            key.startsWith("%{print:") -> {
+                var text = key.substringAfter("%{print:").substringBefore("}")
+                text = if (text.startsWith("%")) parseKey(message, text).first else text
+                //message.channel.sendMessage(text)
+                MessageQueue.addToQueue(message.guild.stringID, message.channel.stringID, text)
+                Pair("", 0)
+            }
+
             else -> {
                 Pair(key, 0)
             }

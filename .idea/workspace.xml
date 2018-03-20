@@ -5,9 +5,62 @@
       <artifact name="Discord-Bot:jar" />
     </artifacts-to-build>
   </component>
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="holladiewal" />
+    <option name="SERVER_URL" value="https://teamcity.whydoyouhate.me" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
+    <SELECTED_DEBUG_PROJECT id="project1" />
+    <SELECTED_DEBUG_TYPE id="bt1" />
+    <treeState key="project">
+      <selectedPath>
+        <pathElement>
+          <option name="myNodeId" value="helperText" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.LinkedTextDescriptor" />
+        </pathElement>
+      </selectedPath>
+    </treeState>
+    <treeState key="selectConfigurations.debug">
+      <expandedPath>
+        <pathElement>
+          <option name="myNodeId" value="project1" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.ProjectDescriptor" />
+        </pathElement>
+      </expandedPath>
+      <selectedPath>
+        <pathElement>
+          <option name="myNodeId" value="project1" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.ProjectDescriptor" />
+        </pathElement>
+        <pathElement>
+          <option name="myNodeId" value="bt1" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.BuildTypeDescriptor" />
+        </pathElement>
+      </selectedPath>
+    </treeState>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bdb7cc44-238f-4cb3-98e3-650f8e47e104" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/MessageQueue.kt" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/EventListener.kt" afterPath="$PROJECT_DIR$/src/EventListener.kt" />
+      <change beforePath="$PROJECT_DIR$/src/Extensions.kt" afterPath="$PROJECT_DIR$/src/Extensions.kt" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" afterPath="$PROJECT_DIR$/src/Main.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,10 +88,10 @@
       <file leaf-file-name="Main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+            <state relative-caret-position="234">
+              <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
               <folding>
-                <element signature="e#0#173#0" expanded="true" />
+                <element signature="e#0#204#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,26 +110,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventListener.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventListener.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EventListener.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="630" column="20" lean-forward="true" selection-start-line="630" selection-start-column="20" selection-end-line="630" selection-end-column="20" />
+            <state relative-caret-position="318">
+              <caret line="703" column="93" lean-forward="true" selection-start-line="703" selection-start-column="93" selection-end-line="703" selection-end-column="93" />
               <folding>
                 <element signature="e#0#513#0" expanded="true" />
-                <element signature="e#6335#6351#0" expanded="false" />
-                <element signature="e#9561#10279#0" expanded="false" />
-                <element signature="e#9763#10231#0" expanded="false" />
-                <element signature="e#14593#15816#0" expanded="false" />
-                <element signature="e#15865#16244#0" expanded="false" />
-                <element signature="e#19713#20477#0" expanded="false" />
-                <element signature="e#20537#20917#0" expanded="false" />
-                <element signature="e#21131#21497#0" expanded="false" />
-                <element signature="e#22164#22441#0" expanded="false" />
-                <element signature="e#22487#28591#0" expanded="false" />
-                <element signature="e#22571#25533#0" expanded="false" />
-                <element signature="e#25575#28543#0" expanded="false" />
-                <marker date="1521068582723" expanded="true" signature="37737:37853" ph="{...}" />
+                <element signature="e#6529#6545#0" expanded="false" />
+                <element signature="e#9755#10473#0" expanded="false" />
+                <element signature="e#9957#10425#0" expanded="false" />
+                <element signature="e#14787#16010#0" expanded="false" />
+                <element signature="e#16059#16438#0" expanded="false" />
+                <element signature="e#19907#20671#0" expanded="false" />
+                <element signature="e#20731#21111#0" expanded="false" />
+                <element signature="e#21325#21691#0" expanded="false" />
+                <element signature="e#22358#22635#0" expanded="false" />
+                <element signature="e#22681#28785#0" expanded="false" />
+                <element signature="e#22765#25727#0" expanded="false" />
+                <element signature="e#25769#28737#0" expanded="false" />
+                <marker date="1521562690418" expanded="true" signature="37945:38061" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -98,7 +151,7 @@
       <file leaf-file-name="NickManager.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NickManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1908">
+            <state relative-caret-position="710">
               <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
               <folding>
                 <element signature="e#0#131#0" expanded="true" />
@@ -110,7 +163,7 @@
       <file leaf-file-name="PermissionsManager.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PermissionsManager.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="-495">
               <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
               <folding>
                 <element signature="e#0#131#0" expanded="true" />
@@ -124,18 +177,27 @@
       <file leaf-file-name="Extensions.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Extensions.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+            <state relative-caret-position="183">
+              <caret line="13" column="87" lean-forward="false" selection-start-line="13" selection-start-column="87" selection-end-line="13" selection-end-column="87" />
               <folding>
                 <element signature="e#0#321#0" expanded="true" />
-                <element signature="n#!!block;n#respond#1" expanded="false" />
                 <element signature="n#!!block;n#reduce#0" expanded="false" />
-                <element signature="e#1005#1250#0" expanded="false" />
-                <element signature="e#1299#1548#0" expanded="false" />
-                <element signature="e#1603#1864#0" expanded="false" />
-                <element signature="e#1906#2139#0" expanded="false" />
+                <element signature="e#1132#1377#0" expanded="false" />
+                <element signature="e#1426#1675#0" expanded="false" />
+                <element signature="e#1730#1991#0" expanded="false" />
+                <element signature="e#2033#2266#0" expanded="false" />
                 <element signature="n#!!block;n#removeCommand#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageQueue.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MessageQueue.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="85" lean-forward="true" selection-start-line="22" selection-start-column="85" selection-end-line="22" selection-end-column="85" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,15 +245,16 @@
         <option value="$PROJECT_DIR$/src/Start.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/UsageError.kt" />
-        <option value="$PROJECT_DIR$/src/Main.kt" />
         <option value="$PROJECT_DIR$/src/Commands.kt" />
         <option value="$PROJECT_DIR$/src/PermissionsManager.kt" />
         <option value="$PROJECT_DIR$/src/RoleFileHandler.kt" />
         <option value="$PROJECT_DIR$/src/RankFileHandler.kt" />
-        <option value="$PROJECT_DIR$/src/Extensions.kt" />
         <option value="$PROJECT_DIR$/src/SettingsHandler.kt" />
         <option value="$PROJECT_DIR$/src/NickManager.kt" />
         <option value="$PROJECT_DIR$/src/EventListener.kt" />
+        <option value="$PROJECT_DIR$/src/Extensions.kt" />
+        <option value="$PROJECT_DIR$/src/Main.kt" />
+        <option value="$PROJECT_DIR$/src/MessageQueue.kt" />
       </list>
     </option>
   </component>
@@ -207,9 +270,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="809" />
-    <option name="y" value="-5" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="907" />
+    <option name="y" value="-8" />
     <option name="width" value="861" />
     <option name="height" value="945" />
   </component>
@@ -228,9 +291,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,17 +351,18 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -482,6 +545,11 @@
       <workItem from="1518878561102" duration="714000" />
       <workItem from="1520888021622" duration="2931000" />
       <workItem from="1521063028898" duration="5778000" />
+      <workItem from="1521138598612" duration="760000" />
+      <workItem from="1521142489114" duration="157000" />
+      <workItem from="1521142707021" duration="1326000" />
+      <workItem from="1521487487387" duration="5698000" />
+      <workItem from="1521546388824" duration="6210000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Stuff">
       <created>1516660009429</created>
@@ -550,7 +618,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166846000" />
+    <option name="totallyTimeSpent" value="180997000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -562,7 +630,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -577,15 +646,16 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="455" y="206" width="1191" height="748" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15618336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16684435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30108696" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4293478" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -632,7 +702,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="33" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -686,13 +756,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IMessage.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/impl/events/guild/channel/message/MessageEvent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -877,43 +940,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PermissionsManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#131#0" expanded="true" />
-            <element signature="n#!!block;n#save#0;n#!!block;n#PermissionsManager#0" expanded="false" />
-            <element signature="n#!!block;n#read#0;n#!!block;n#PermissionsManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/Discord4j-2.9.3-shaded.jar!/sx/blah/discord/handle/obj/IIDLinkedObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="e#122#123#0" expanded="true" />
-            <element signature="e#155#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#173#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -973,23 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Extensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#321#0" expanded="true" />
-            <element signature="n#!!block;n#respond#1" expanded="false" />
-            <element signature="n#!!block;n#reduce#0" expanded="false" />
-            <element signature="e#1005#1250#0" expanded="false" />
-            <element signature="e#1299#1548#0" expanded="false" />
-            <element signature="e#1603#1864#0" expanded="false" />
-            <element signature="e#1906#2139#0" expanded="false" />
-            <element signature="n#!!block;n#removeCommand#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SettingsHandler.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
@@ -1012,17 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NickManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1908">
-          <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#131#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3150">
           <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,117 +1053,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7218">
           <caret line="458" column="0" lean-forward="false" selection-start-line="458" selection-start-column="0" selection-end-line="458" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
-            <marker date="1517348319151" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1517348319151" expanded="false" signature="150:1281" ph="..." />
-            <marker date="1517348319151" expanded="true" signature="1883:2189" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="2241:2477" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="2548:2777" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="2831:2927" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="3000:3079" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="3134:3216" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="3290:3355" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="3411:3422" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="3479:3485" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="3561:3678" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="3611:3670" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="3733:3744" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="3801:3807" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="3882:3999" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="3932:3991" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="4058:4069" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="4126:4132" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="4211:4328" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="4261:4320" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="4445:7399" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="4913:4997" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="5114:5197" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="5299:5383" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="5504:6759" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="6848:7381" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="7516:8295" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="7992:8277" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="8356:8600" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="8680:8917" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="8980:9075" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9157:9235" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9320:9401" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9505:9569" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9659:9785" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9700:9777" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9886:10018" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="9927:10004" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="10134:10272" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="10175:10252" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="10362:10428" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="10529:10602" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="10724:11315" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="10959:11021" ph="handle(event) → {" />
-            <marker date="1517348319151" expanded="false" signature="11245:11260" ph="}" />
-            <marker date="1517348319151" expanded="true" signature="11369:11575" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="11627:11638" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="11683:11689" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="11760:12916" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="11856:11972" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="12057:12908" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="12973:14054" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="13183:14035" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="14134:14471" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="14189:14463" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="14511:15713" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="14737:14785" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="14808:15705" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="14858:15693" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="15792:16479" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="15865:15876" ph="{}" />
-            <marker date="1517348319151" expanded="true" signature="15957:16473" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="16584:17528" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="16873:17040" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="17078:17093" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="17117:17127" ph=" }" />
-            <marker date="1517348319151" expanded="false" signature="17168:17183" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="17217:17227" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="17282:17330" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="17369:17384" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="17405:17415" ph=" }" />
-            <marker date="1517348319151" expanded="false" signature="17449:17464" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="17512:17522" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="17614:18743" ph="{...}" />
-            <marker date="1517348319151" expanded="true" signature="18019:18268" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="18306:18321" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="18343:18353" ph=" }" />
-            <marker date="1517348319151" expanded="false" signature="18394:18409" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="18446:18456" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="18511:18563" ph="{...}" />
-            <marker date="1517348319151" expanded="false" signature="18602:18617" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="18638:18648" ph=" }" />
-            <marker date="1517348319151" expanded="false" signature="18682:18697" ph=" { " />
-            <marker date="1517348319151" expanded="false" signature="18727:18737" ph=" }" />
-            <marker date="1517348319151" expanded="true" signature="18780:18940" ph="{...}" />
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NickManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="109" column="14" lean-forward="false" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Extensions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="13" column="87" lean-forward="false" selection-start-line="13" selection-start-column="87" selection-end-line="13" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#321#0" expanded="true" />
+            <element signature="n#!!block;n#reduce#0" expanded="false" />
+            <element signature="e#1132#1377#0" expanded="false" />
+            <element signature="e#1426#1675#0" expanded="false" />
+            <element signature="e#1730#1991#0" expanded="false" />
+            <element signature="e#2033#2266#0" expanded="false" />
+            <element signature="n#!!block;n#removeCommand#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PermissionsManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-495">
+          <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#131#0" expanded="true" />
+            <element signature="n#!!block;n#save#0;n#!!block;n#PermissionsManager#0" expanded="false" />
+            <element signature="n#!!block;n#read#0;n#!!block;n#PermissionsManager#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EventListener.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="630" column="20" lean-forward="true" selection-start-line="630" selection-start-column="20" selection-end-line="630" selection-end-column="20" />
+        <state relative-caret-position="318">
+          <caret line="703" column="93" lean-forward="true" selection-start-line="703" selection-start-column="93" selection-end-line="703" selection-end-column="93" />
           <folding>
             <element signature="e#0#513#0" expanded="true" />
-            <element signature="e#6335#6351#0" expanded="false" />
-            <element signature="e#9561#10279#0" expanded="false" />
-            <element signature="e#9763#10231#0" expanded="false" />
-            <element signature="e#14593#15816#0" expanded="false" />
-            <element signature="e#15865#16244#0" expanded="false" />
-            <element signature="e#19713#20477#0" expanded="false" />
-            <element signature="e#20537#20917#0" expanded="false" />
-            <element signature="e#21131#21497#0" expanded="false" />
-            <element signature="e#22164#22441#0" expanded="false" />
-            <element signature="e#22487#28591#0" expanded="false" />
-            <element signature="e#22571#25533#0" expanded="false" />
-            <element signature="e#25575#28543#0" expanded="false" />
-            <marker date="1521068582723" expanded="true" signature="37737:37853" ph="{...}" />
+            <element signature="e#6529#6545#0" expanded="false" />
+            <element signature="e#9755#10473#0" expanded="false" />
+            <element signature="e#9957#10425#0" expanded="false" />
+            <element signature="e#14787#16010#0" expanded="false" />
+            <element signature="e#16059#16438#0" expanded="false" />
+            <element signature="e#19907#20671#0" expanded="false" />
+            <element signature="e#20731#21111#0" expanded="false" />
+            <element signature="e#21325#21691#0" expanded="false" />
+            <element signature="e#22358#22635#0" expanded="false" />
+            <element signature="e#22681#28785#0" expanded="false" />
+            <element signature="e#22765#25727#0" expanded="false" />
+            <element signature="e#25769#28737#0" expanded="false" />
+            <marker date="1521562690418" expanded="true" signature="37945:38061" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MessageQueue.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="85" lean-forward="true" selection-start-line="22" selection-start-column="85" selection-end-line="22" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>

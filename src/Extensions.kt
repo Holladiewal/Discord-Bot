@@ -8,7 +8,10 @@ import kotlin.properties.Delegates
 
 fun MessageEvent.respond(message: String, tts: Boolean = false){
     if (message.isNotBlank() && message.isNotEmpty())
-    this.channel.sendMessage(message, tts)
+        if (tts)
+            this.channel.sendMessage(message, tts)
+        else
+            MessageQueue.addToQueue(this.guild.stringID, this.channel.stringID, message)
 }
 
 fun MessageEvent.respond(message: String, embed: EmbedObject, tts: Boolean = false){
