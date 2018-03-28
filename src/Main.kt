@@ -2,19 +2,17 @@ import sx.blah.discord.api.ClientBuilder
 import sx.blah.discord.api.IDiscordClient
 import sx.blah.discord.util.DiscordException
 import java.io.File
-import java.nio.file.Path
 import kotlin.concurrent.timer
 
 val client: IDiscordClient = createClient(secret.token, true) ?: throw IllegalStateException("client login failed")
 fun main(args: Array<String>) {
-    //val client: IDiscordClient = createClient(secret.token, true) ?: throw IllegalStateException("client login failed")
     client.dispatcher.registerListener(EventListener())
 
     val timer = timer("QueueSender", true, 0, 1000){
         MessageQueue.sendQueue()
     }
 
-    /*  TODO
+    /*  TODO:
     badword filter
     url filter
     logging off all bot related actions and messages - nearly done

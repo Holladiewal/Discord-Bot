@@ -11,5 +11,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="Discord4j-2.9.3-shaded" level="project" />
+    <orderEntry type="library" name="com.h2database:h2:1.4.197" level="project" />
+    <orderEntry type="library" name="klaxon-2.1.14" level="project" />
+    <orderEntry type="library" name="khttp-0.1.0" level="project" />
   </component>
 </module>

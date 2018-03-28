@@ -1,9 +1,7 @@
-import sx.blah.discord.api.internal.json.objects.EmbedObject
 import sx.blah.discord.handle.impl.events.guild.channel.message.MessageEvent
 import sx.blah.discord.handle.impl.obj.Guild
 import sx.blah.discord.handle.obj.IGuild
 import sx.blah.discord.handle.obj.IMessage
-import java.io.File
 import kotlin.properties.Delegates
 
 fun MessageEvent.respond(message: String, tts: Boolean = false){
@@ -12,10 +10,6 @@ fun MessageEvent.respond(message: String, tts: Boolean = false){
             this.channel.sendMessage(message, tts)
         else
             MessageQueue.addToQueue(this.guild.stringID, this.channel.stringID, message)
-}
-
-fun MessageEvent.respond(message: String, embed: EmbedObject, tts: Boolean = false){
-    this.channel.sendMessage(message, embed, tts)
 }
 
 fun String.reduce() : String{
@@ -27,6 +21,7 @@ fun String.reduce() : String{
 }
 
 val IMessage.info: MutableMap<String, String> by Delegates.observable(mutableMapOf(), { _, _, _ -> Unit})
+
 val IGuild.commands: CommandHandler
     get() {
         if (CommandHandler.instances.containsKey(this.stringID)) return CommandHandler.instances[this.stringID]!!
@@ -78,9 +73,7 @@ fun IGuild.removeCommand(name: String){
 fun IGuild.getAllCommands(): Map<String, String> = commands.getAllCommands()
 
 fun IGuild.log(text: String){
-    File("./guilds/${this.stringID}/log").printWriter().use{ out ->
-        out.println(text)
-        out.flush()
-        out.close()
-    }
+    DatabaseManagerHolder.getForGuild(this.stringID).log(text)
 }
+
+

@@ -1,3 +1,5 @@
+import com.beust.klaxon.*
+import org.apache.commons.lang3.StringUtils.substringAfter
 import sx.blah.discord.api.events.EventSubscriber
 import sx.blah.discord.handle.impl.events.ReadyEvent
 import sx.blah.discord.handle.impl.events.guild.channel.message.MentionEvent
@@ -6,13 +8,18 @@ import sx.blah.discord.handle.impl.events.guild.member.NicknameChangedEvent
 import sx.blah.discord.handle.impl.events.guild.member.UserJoinEvent
 import sx.blah.discord.handle.obj.IMessage
 import java.awt.Color
-import java.io.File
+import java.net.URLDecoder
 import java.util.*
+import java.util.regex.Pattern
+import kotlin.math.absoluteValue
 
 class EventListener {
 
     val arrays : MutableMap<String, MutableMap<String, MutableList<String>>> = mutableMapOf() // Map for guild, Map for array name, List for content
     val vars : MutableMap<String, MutableMap<String, String>> = mutableMapOf()
+    lateinit var currentJson : JsonObject
+    val parser = Parser()
+    var recurCount: Int = 0
 
     fun isNameFree(guild: String, name: String): Boolean{
         return !(arrays[guild]!!.containsKey(name) || vars[guild]!!.containsKey(name))
@@ -26,8 +33,13 @@ class EventListener {
     fun onReadyEvent(event: ReadyEvent) {
         event.client.guilds.forEach {
             it.commands
+            it.settings
+            it.permissions
+            it.nicks
+            it.ranks
             arrays.getOrPut(it.stringID, {mutableMapOf()})
             vars.getOrPut(it.stringID, { mutableMapOf()})
+            DatabaseManagerHolder.getForGuild(it.stringID)
         }
     }
 
@@ -170,7 +182,7 @@ class EventListener {
                         return
                     }
                     "inspect" -> {
-                        event.respond(if (guild.hasCommand(wordList[2])) guild.getCommand(wordList[2]) else "That command... it vanished.... couldn't find anything in my database... you sure it still exists or ever existed?")
+                        event.respond(if (guild.hasCommand(wordList[2])) "```${guild.getCommand(wordList[2])}```" else "That command... it vanished.... couldn't find anything in my database... you sure it still exists or ever existed?")
                         return
                     }
                     else -> {
@@ -365,7 +377,10 @@ class EventListener {
                     "log" -> {
                         var lineCount = 5
                         if (wordlist.size >= 3) lineCount = wordlist[2].toInt()
-                        File("./guilds/${guild.stringID}/log").readLines().takeLast(lineCount).forEach { event.respond(it + "\n") }
+                        //File("./guilds/${guild.stringID}/log").readLines().takeLast(lineCount).forEach { event.respond(it + "\n") }
+                        DatabaseManagerHolder.getForGuild(guild.stringID).getLog(lineCount).forEach { timestamp, text ->
+                            event.respond("$timestamp | $text")
+                        }
                     }
                     "roles", "clearances" -> {
                         when (wordlist[2]) {
@@ -412,31 +427,31 @@ class EventListener {
                                 when (wordlist[3]) {
                                     "1" -> {
                                         if (guild.permissions.getLevel(event.author) >= 2) {
-                                            guild.permissions.removeRole(wordlist[4], 1)
+                                            guild.permissions.removeRole(wordlist[4])
                                         }
                                         event.respond("Clearances updated.")
-                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 1")
+                                        guild.log("${event.author.name}#${event.author.discriminator} removed ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 1")
                                     }
                                     "2" -> {
                                         if (guild.permissions.getLevel(event.author) >= 3) {
-                                            guild.permissions.removeRole(wordlist[4], 2)
+                                            guild.permissions.removeRole(wordlist[4])
                                         }
                                         event.respond("Clearances updated.")
-                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 2")
+                                        guild.log("${event.author.name}#${event.author.discriminator} removed ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 2")
                                     }
                                     "3" -> {
                                         if (guild.permissions.getLevel(event.author) >= 4) {
-                                            guild.permissions.removeRole(wordlist[4], 3)
+                                            guild.permissions.removeRole(wordlist[4])
                                         }
                                         event.respond("Clearances updated.")
-                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 3")
+                                        guild.log("${event.author.name}#${event.author.discriminator} removed ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 3")
                                     }
                                     "4" -> {
                                         if (guild.permissions.getLevel(event.author) >= 5) {
-                                            guild.permissions.removeRole(wordlist[4], 4)
+                                            guild.permissions.removeRole(wordlist[4])
                                         }
                                         event.respond("Clearances updated.")
-                                        guild.log("${event.author.name}#${event.author.discriminator} added ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 4")
+                                        guild.log("${event.author.name}#${event.author.discriminator} removed ${wordlist[4]} (${guild.getRoleByID(wordlist[4].toLong()).name}) to class 4")
                                     }
                                     "5" -> {
                                         event.respond("You seriously tried messsing with the security clearance of the server owner? Good try, but no... this won't work...")
@@ -458,12 +473,13 @@ class EventListener {
 
         val messageToBeSend = parseMessage(message, guild.getCommand(message.content.split(" ", limit = 2)[0].substring(1).trim()))
         if (!message.info.containsKey("target"))
-            event.respond(messageToBeSend)
+           // event.respond(messageToBeSend)
         else {
             if (message.info["target"] == "pm")
                 event.author.orCreatePMChannel.sendMessage(messageToBeSend) //actually "getOrCreatePMChannel", but kotlin thinks its a getter...
             else
-                guild.getChannelByID(message.info["target"]!!.toLong()).sendMessage(messageToBeSend)
+                //guild.getChannelByID(message.info["target"]!!.toLong()).sendMessage(messageToBeSend)
+                ;
         }
 
     }
@@ -477,10 +493,34 @@ class EventListener {
 
     fun parseMessage(message: IMessage, input: String): String {
         message.info.clear()
-        return input.split(" ").map { parseKey(message, it).first }.joinToString { it }
+
+
+        var count = 0
+        var lastSplit = 0
+        val list = mutableListOf<String>()
+        "$input ".forEachIndexed { i, it  ->
+            when (it) {
+                '{' -> count++
+                '}' -> count--
+                '%' -> Unit
+                else -> {
+                    if (count == 0){
+                        list.add(input.substring(lastSplit, i))
+                        lastSplit = i // possibly +1
+                    }
+                }
+            }
+
+        }
+
+        return list.map {
+            recurCount = -1
+            parseKey(message, it.trim()).first
+        }.joinToString(separator = " ") { it }.replace("\\n", "\n")
     }
 
     fun parseKey(message: IMessage, key: String): Pair<String, Int> {
+        recurCount++
         return when {
             key.startsWith("%{cmdlist}") -> {
                 var tmpString = ""
@@ -505,7 +545,7 @@ class EventListener {
             }
 
             key.startsWith("%{params:") -> {
-                var index = key.substringAfter("%{params:").substringBefore("}")
+                var index = key.substringAfter("%{params:").substring(0, getMatchingBrace(key.substringAfter("%{params:"), recurCount))
                 index = if (index.startsWith("%")) parseKey(message, index).first else index
                 val wordList = message.content.split(" ") as MutableList
                 wordList.removeAt(0)
@@ -524,7 +564,7 @@ class EventListener {
             }
 
             key.startsWith("%{classneeded:") -> {
-                var id = key.substringAfter("%{classneeded:").substringBefore("}")
+                var id = key.substringAfter("%{classneeded:").substring(0, getMatchingBrace(key.substringAfter("%{classneeded:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.permissions.getLevel(message.author) <= id.toCharArray()[0].toString().toInt()){
                     message.info["blocked"] = "true"
@@ -533,7 +573,7 @@ class EventListener {
             }
 
             key.startsWith("%{roleneeded:") -> {
-                var id = key.substringAfter("%{roleneeded:").substringBefore("}")
+                var id = key.substringAfter("%{roleneeded:").substring(0, getMatchingBrace(key.substringAfter("%{roleneeded:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (!message.author.hasRole(message.guild.getRoleByID(id.toLong()))){
                     message.info["blocked"] = "true"
@@ -543,7 +583,7 @@ class EventListener {
             }
 
             key.startsWith("%{excluderole:") -> {
-                var id = key.substringAfter("%{roleneeded:").substringBefore("}")
+                var id = key.substringAfter("%{roleneeded:").substring(0, getMatchingBrace(key.substringAfter("%{roleneeded:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.author.hasRole(message.guild.getRoleByID(id.toLong()))){
                     message.info["blocked"] = "true"
@@ -554,7 +594,7 @@ class EventListener {
 
             key.startsWith("%{redirect:") -> {
                 if (key.contains("%{redirect:")) {
-                    var id = key.substringAfter("%{redirect:").substringBefore("}")
+                    var id = key.substringAfter("%{redirect:").substring(0, getMatchingBrace(key.substringAfter("%{redirect:"), recurCount))
                     id = if (id.startsWith("%")) parseKey(message, id).first else id
                     message.info["target"] = id
                 }
@@ -562,7 +602,7 @@ class EventListener {
             }
 
             key.startsWith("%{togglerole:") -> {
-                var id = key.substringAfter("%{togglerole:").substringBefore("}")
+                var id = key.substringAfter("%{togglerole:").substring(0, getMatchingBrace(key.substringAfter("%{togglerole:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.getRolesByName(id).size > 0) {
                     if (!message.guild.ranks.isRank(id)) return Pair("Sorry, but that is not a rank, just a role..... IF you really want it, ask a human to give it to you!", -1)
@@ -579,7 +619,7 @@ class EventListener {
             }
 
             key.startsWith("%{giverole:") -> {
-                var id = key.substringAfter("%{togglerole:").substringBefore("}")
+                var id = key.substringAfter("%{togglerole:").substring(0, getMatchingBrace(key.substringAfter("%{togglerole:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.getRolesByName(id).size > 0) {
                     if (!message.guild.ranks.isRank(id)) return Pair("Sorry, but that is not a rank, just a role..... IF you really want it, ask a human to give it to you!", -1)
@@ -593,7 +633,7 @@ class EventListener {
             }
 
             key.startsWith("%{takerole:") -> {
-                var id = key.substringAfter("%{togglerole:").substringBefore("}")
+                var id = key.substringAfter("%{togglerole:").substring(0, getMatchingBrace(key.substringAfter("%{togglerole:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.getRolesByName(id).size > 0) {
                     if (!message.guild.ranks.isRank(id)) return Pair("Sorry, but that is not a rank, just a role..... IF you really want to get rid of it, ask a human to take it from you!", -1)
@@ -607,7 +647,7 @@ class EventListener {
             }
 
             key.startsWith("%{createrole:") -> {
-                var id = key.substringAfter("%{createrole:").substringBefore("}")
+                var id = key.substringAfter("%{createrole:").substring(0, getMatchingBrace(key.substringAfter("%{createrole:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 val role = message.guild.createRole()
                 val rand = Random()
@@ -619,7 +659,7 @@ class EventListener {
             }
 
             key.startsWith("%{deleterole:") -> {
-                var id = key.substringAfter("%{deleterole:").substringBefore("}")
+                var id = key.substringAfter("%{deleterole:").substring(0, getMatchingBrace(key.substringAfter("%{deleterole:"), recurCount))
                 id = if (id.startsWith("%")) parseKey(message, id).first else id
                 if (message.guild.ranks.isRank(id)) {
                     message.guild.ranks.removeRank(id)
@@ -629,7 +669,7 @@ class EventListener {
             }
 
             key.startsWith("%{clear:") -> {
-                var numberOfPosts = key.substringAfter("%{clear:").substringBefore("}")
+                var numberOfPosts = key.substringAfter("%{clear:").substring(0, getMatchingBrace(key.substringAfter("%{clear:"), recurCount))
                 numberOfPosts = if (numberOfPosts.startsWith("%")) parseKey(message, numberOfPosts).first else numberOfPosts
                 var tmpString = ""
                 message.channel.getMessageHistory(numberOfPosts.toInt()).forEach {
@@ -642,14 +682,14 @@ class EventListener {
             key.startsWith("%{if:") -> {
                 var cond1 = key.substringAfter("%{if:").substringBefore(":")
                 if (cond1.startsWith("%")) cond1 = parseKey(message, cond1).first
-                var cond2 = key.substringAfter("$cond1:").substringBefore("}")
+                var cond2 = key.substringAfter("$cond1:").substring(0, getMatchingBrace(key.substringAfter("$cond1:"), recurCount))
                 if (cond2.startsWith("%")) cond2 = parseKey(message, cond2).first
                 return if (cond1 == cond2) Pair("true", 1) else Pair("false", 0)
             }
 
             key.startsWith("%{var:") -> {
                 val guild = message.guild.stringID
-                var name = key.substringAfter("%{var:").substringBefore(":")
+                var name = key.substringAfter("%{var:").substring(0, getMatchingBrace(key, recurCount) - "%{var:".length)
                 if (name.startsWith("%")) name = parseKey(message, name).first
 
                 if (type(guild, name) == "VAR") Pair(vars[guild]!![name]!!, 0) else Pair("Not found", -1)
@@ -659,13 +699,14 @@ class EventListener {
                 val guild = message.guild.stringID
                 var name = key.substringAfter("%{array:").substringBefore(":")
                 if (name.startsWith("%")) name = parseKey(message, name).first
-                var index = key.substringAfter("%{array:").substringBefore(":")
+                var index = key.substringAfter("%{array:$name:").substring(0, getMatchingBrace(key.substringAfter("%{array:$name:"), recurCount))
                 if (index.startsWith("%")) index = parseKey(message, index).first
 
                 if (type(guild, name) == "ARRAY") Pair(arrays[guild]!![name]!![index.toInt()], 0) else Pair("Not found", -1)
             }
 
             key.startsWith("%{for:") -> {
+
                 var varname = key.substringAfter("%{for:").substringBefore(":")
                 if (varname.startsWith("%")) varname = parseKey(message, varname).first
 
@@ -675,12 +716,20 @@ class EventListener {
                 var max = key.substringAfter("$min:").substringBefore(":")
                 if (max.startsWith("%")) max = parseKey(message, max).first
 
-                var stepSize = key.substringAfter("$max:").substringBefore(":")
+                var stepSize = key.substringAfter("$min:$max:").substringBefore(":")
                 if (stepSize.startsWith("%")) stepSize = parseKey(message, stepSize).first
 
-                val lines = key.substringAfter("$stepSize:").substringBefore("}").split("\n")
+                val lines = key.substringAfter("$min:$max:$stepSize:").substring(0, getMatchingBrace(key, recurCount) - "%{for:$varname:$min:$max:$stepSize:".length).split("\n")
 
-                for (i in min.toInt()..max.toInt() step stepSize.toInt()){
+                val range =
+                        if (max.toInt() < min.toInt())
+                            min.toInt() downTo max.toInt() step stepSize.toInt().absoluteValue
+                        else if (min.toInt() < max.toInt() && stepSize.toInt() < 0)
+                            max.toInt() downTo min.toInt() step stepSize.toInt().absoluteValue
+                        else
+                            min.toInt()..max.toInt() step stepSize.toInt()
+
+                for (i in range){
                     vars[message.guild.stringID]!![varname] = i.toString()
                     lines.forEach {
                         val result = parseKey(message, it)
@@ -694,29 +743,163 @@ class EventListener {
             }
 
             key.startsWith("%{outcome:") -> {
-                val id = key.substringAfter("%{outcome:").substringBefore("}")
+                val id = key.substringAfter("%{outcome:").substring(0, getMatchingBrace(key.substringAfter("%{outcome:"), recurCount))
                 Pair("${parseKey(message, id).second}", 0)
 
             }
 
             key.startsWith("%{suppress:") -> {
                 if (key.substringAfter("%{suppress:").substringBefore("}").startsWith("%"))
-                    parseKey(message, key.substringAfter("%{suppress:").substringBefore("}"))
+                    parseKey(message, key.substringAfter("%{suppress:").substring(0, getMatchingBrace(key, recurCount) - "%{suppress:".length))
                 Pair("", 0)
             }
 
             key.startsWith("%{print:") -> {
-                var text = key.substringAfter("%{print:").substringBefore("}")
-                text = if (text.startsWith("%")) parseKey(message, text).first else text
+                var text = key.substringAfter("%{print:").substring(0, getMatchingBrace(key, recurCount) - "%{print:".length)
+                //text = if (text.startsWith("%")) parseKey(message, text).first else text
+               // text = text.split(" ").map{ parseKey(message, it) }.joinToString(separator=" ") { it.first }
+
+                var count = 0
+                var lastSplit = 0
+                val list = mutableListOf<String>()
+                var goneUp = false
+                "$text ".forEachIndexed { i, it  ->
+                    when (it) {
+                        '{' -> count++
+                        '}' -> count--
+                        else -> {
+                            if (count == 0 && goneUp){
+                                list.add(text.substring(lastSplit, i))
+                                lastSplit = i // possibly +1
+                                goneUp = false
+                            }
+                            else if (count == 0 && !goneUp){
+                                if (it == ' '){
+                                    list.add(text.substring(lastSplit, i))
+                                    lastSplit = i // possibly +1
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                text = list.map {
+                    parseKey(message, it.trim()).first
+                }.joinToString(separator = " ") { it }
+
                 //message.channel.sendMessage(text)
                 MessageQueue.addToQueue(message.guild.stringID, message.channel.stringID, text)
                 Pair("", 0)
+            }
+
+            key.startsWith("%{loadJson:") -> {
+                @Suppress("NAME_SHADOWING")
+                val key = key.replace("%7D", "}").replace("%7B", "{")
+                var url = key.substringAfter("%{loadJson:").substring(0, getMatchingBrace(key, recurCount) - "%{loadJson:".length)
+                url = if (url.startsWith("%")) parseKey(message, url).first else url
+
+
+                currentJson = (parser.parse(StringBuilder(khttp.get(url).text)) as JsonObject)
+
+
+                Pair("Json loaded!", 0)
+            }
+
+            key.startsWith("%{getFromJson:") -> {
+                var _path = key.substringAfter("%{getFromJson:").substring(0, getMatchingBrace(key, recurCount) - "%{getFromJson:".length)
+                try {currentJson} catch(ignored: UninitializedPropertyAccessException) {return Pair("You need to load a JSON first!", -1)}
+                _path = _path.split(".").map {
+                    parseKey(message, it).first
+                }.map {
+                    var tmp = it
+                    if (tmp.contains("[") || tmp.contains("]")){
+                        val beginning = tmp.substringBefore("[")
+                        val middle = parseKey(message, tmp.substringAfter("[").substringBefore("]")).first
+                        val ending = tmp.substringAfter("]")
+                        tmp = "$beginning[$middle]$ending"
+                    }
+                    tmp
+                }.joinToString(separator = ".") { it }
+
+                var result = "Nope"
+                val pathmatcher = object : PathMatcher{
+                    override fun onMatch(path: String, value: Any) {
+                        result = value.toString()
+                    }
+
+                    override fun pathMatches(path: String) = Pattern.matches(_path, path)
+
+                }
+
+                Klaxon().pathMatcher(pathmatcher).parse<Any?>(currentJson.toJsonString())
+
+                Pair(result, 0)
+            }
+
+            key.startsWith("%{simplemath:") -> {
+                var term = key.substringAfter("%{simplemath:").substring(0, getMatchingBrace(key, recurCount) - "%{simplemath:".length)
+
+                term = term.split(" ").joinToString(separator = "") { parseKey(message, it).first }
+
+                val operators = listOf("*", "/" ,"+", "-")
+                var result : Float? = null
+
+                operators.forEach { operator ->
+                    if (result != null) {return@forEach}
+                    val list = term.split(operator)
+                    when (operator){
+                        "*" -> {
+                            result = list[0].toFloat() * list[1].toFloat()
+                            return@forEach
+                        }
+
+                        "/" -> {
+                            result = list[0].toFloat() / list[1].toFloat()
+                            return@forEach
+                        }
+
+                        "-" -> {
+                            result = list[0].toFloat() - list[1].toFloat()
+                            return@forEach
+                        }
+
+                        "+" -> {
+                            result = list[0].toFloat() + list[1].toFloat()
+                            return@forEach
+                        }
+                    }
+                }
+
+
+
+                Pair("${result ?: term}",0)
             }
 
             else -> {
                 Pair(key, 0)
             }
         }
+    }
+
+    fun getMatchingBrace(input: String, count: Int): Int{
+        //return
+
+        var counter = 0
+        "$input ".forEachIndexed { i, it  ->
+            when (it) {
+                '{' -> counter++
+                '}' -> counter--
+                '%' -> Unit
+                else -> {
+                    if (counter == 0){
+                        return i - 1
+                    }
+                }
+            }
+
+        }
+        return input.lastIndexOf('}')
     }
 }
 

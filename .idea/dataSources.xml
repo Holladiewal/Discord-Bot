@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Playground.db" uuid="2b7d161f-9d9f-4c6f-9bd1-aae5efcfac96">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:file:$PROJECT_DIR$/guilds/293127489180532736.db;AUTO_SERVER=TRUE</jdbc-url>
+    </data-source>
+  </component>
+</project>

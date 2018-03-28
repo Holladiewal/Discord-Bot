@@ -12,6 +12,9 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       </element>
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/klaxon-2.1.14.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/khttp-0.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/h2-1.4.197.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
