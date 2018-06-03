@@ -3,7 +3,7 @@ This ReadMe is a WIP. Expect more at a later point.
 
 # Keys
 ## Current keys:
-* "${cmdlist}"  
+* "%{cmdlist}"  
   lists all available commands on this guild (just their names)
 * "%n" / "%{nick}  
   will be replaced with the nick name of the user calling this command
@@ -31,9 +31,9 @@ This ReadMe is a WIP. Expect more at a later point.
   gets a json from the specified url
 * "%{getFromJson:\<RegEx-JSON-path to key\>}"   
    returns the last-matching JSON key from the last loaded JSON
-* "${arr:\<name\>:\<index\>}"   
+* "%{arr:\<name\>:\<index\>}"   
   gets the String at the index in the specified array
-* "${var:\<name\>}"  
+* "%{var:\<name\>}"  
   returns the String saved with the given name
 * "%{clear: \< amount to clear \>"  
   deletes the last x messages
